@@ -21,8 +21,12 @@ from . import views
 #localhost:8000
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('home/',views.home),
+    path(' ',views.home),
     path('test/',views.test),
     path('AboutUs/',views.AboutUs),
     path('ContactUs/',views.ContactUs),
-    path('home/',views.home)
+    path('movies/',views.movies),
+    path('show/',views.show),
+    path('news/',views.news)
 ]

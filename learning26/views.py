@@ -15,3 +15,12 @@ def ContactUs(request):
 
 def home(request):
     return render(request, 'home.html')
+
+def movies(request):
+    return render(request, 'movies.html')
+
+def show(request):
+    return render(request, 'show.html')
+
+def news(request):
+    return render(request, 'news.html')
