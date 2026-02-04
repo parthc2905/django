@@ -23,3 +23,14 @@ class Product(models.Model):
 
     class Meta:
         db_table = "product"
+
+
+#course db
+
+class Course(models.Model):
+    courseName = models.CharField(max_length=100)
+    courseCode = models.PositiveIntegerField()
+
+    class Meta:
+        db_table = "course"
+
