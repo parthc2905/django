@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'student' # app name
+    'student', # app name
+    'test1' #app name
 ]
 
 MIDDLEWARE = [
@@ -76,7 +77,7 @@ WSGI_APPLICATION = 'learning26.wsgi.application'
 DATABASES = {
     'default': {
        'ENGINE':'django.db.backends.postgresql',
-       'NAME':'learning26',
+       'NAME':'learning26', 
        'USER':'postgres',
        'PASSWORD':'1234',
        'HOST':'localhost',
