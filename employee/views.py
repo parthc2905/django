@@ -4,7 +4,7 @@ from .forms import EmployeeForm, CourseForm
 # Create your views here.
 def employeeList(request):
     #employees = Employee.objects.all() #select * from employee
-    employees = Employee.objects.all().values()
+    employees = Employee.objects.all().order_by("id").values()
     #employees = Employee.objects.all().values_list()
     print(employees)
     return render(request, 'employee/employeeList.html',{"employees":employees})
@@ -135,3 +135,17 @@ def desendingEmployee(request):
     #return redirect("employeeList")
     return render(request,"employee/employeeList.html",{"employees":employees})
 
+
+#update --->
+def updateEmployee(request,id):
+    #database existing user... id -->
+    # by default it will all id data in form and when we change data and submit it, it will update data in database.
+    employee = Employee.objects.get(id=id) #select * from employee where id = 1
+    
+    if request.method == "POST":
+        form = EmployeeForm(request.POST,instance=employee)
+        form.save()
+        return redirect("employeeList")
+    else:
+        form = EmployeeForm(instance=employee)    
+        return render(request,"employee/updateEmployee.html",{"form":form})

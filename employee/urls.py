@@ -13,4 +13,6 @@ urlpatterns = [
     path("filterEmployee/",views.filterEmployee,name="filterEmployee"),
     path("ascEmployee/",views.ascendingEmployee,name="ascendingEmployee"),
     path("dscEmployee/",views.desendingEmployee,name="desendingEmployee"),
+
+    path('updateemployee/<int:id>',views.updateEmployee,name="updateEmployee"),
 ]
