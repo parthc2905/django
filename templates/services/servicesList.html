@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services List</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        th, td {
+            padding: 10px;
+        }
+        a{
+            border: 2px solid black;
+            padding: 5px 10px;
+            text-decoration: none;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Services List</h1>
+    <!-- <ul>
+        {% for service in services %}
+            <li>{{ service.name }} - {{ service.description }} - {{ service.price }}</li>
+        {% endfor %}
+    </ul> -->
+
+    <a href="{% url 'createServices' %}">Create New Service</a>
+    <table >
+        <tr >
+            <th>ID</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Actions</th>
+        </tr>
+        {% for service in services %}
+        <tr>
+            <td>{{ service.id }}</td>
+            <td>{{ service.name }}</td>
+            <td>{{ service.description }}</td>
+            <td>{{ service.price }}</td>
+            <td>
+                <a href="{% url 'deleteService' service.id %}">Delete</a>
+                <a href="{% url 'updateService' service.id %}">Update</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
