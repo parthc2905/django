@@ -1,5 +1,6 @@
 from django.shortcuts import render
-
+from .models import Service
+from .forms import ServiceForm
 # Create your views here.
 
 def studentHome(request):
@@ -20,3 +21,15 @@ def studentCollege(request):
 def studentEducation(request):
     educations = {'education' :"CSE(AIML)"}
     return render(request, 'student/studentEducation.html', educations)
+
+def serviceList(request):
+    services = Service.objects.all()
+    return render(request,'student/serviceList.html',{'services':services})
+
+def createService(request):
+    form = ServiceForm()
+    if request.method == 'POST':
+        form = ServiceForm(request.POST)
+        if form.is_valid():
+            form.save()
+    return render(request,'student/createService.html',{'form':form})
