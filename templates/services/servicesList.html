@@ -45,7 +45,7 @@
             <td>{{ service.description }}</td>
             <td>{{ service.price }}</td>
             <td>
-                <a href="{% url 'deleteService' service.id %}">Delete</a>
+                <a href="{% url 'deleteService' service.id %}" onclick="return confirm('Are you sure you want to delete this?')">Delete</a>
                 <a href="{% url 'updateService' service.id %}">Update</a>
             </td>
         </tr>

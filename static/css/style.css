@@ -152,3 +152,11 @@
     line-height: 1.4;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
+
+.invalid-feedback {
+    color: red !important;
+}
+
+.is-invalid {
+    border: 2px solid red !important;
+}
