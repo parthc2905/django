@@ -7,7 +7,7 @@ from django.contrib.auth import login
 
 def registerUser(request):
     
-    if request.method == 'POST':
+    if request.method == 'POST':    
         form = UserForm(request.POST or None)
         if form.is_valid():
             #is_staff = true
@@ -18,4 +18,4 @@ def registerUser(request):
             return redirect('/')
     else:
         form = UserForm()
-        return render(request,'core/register.html',{'form':form})
+        return render(request,'core/register.html',{'form':form}) 
